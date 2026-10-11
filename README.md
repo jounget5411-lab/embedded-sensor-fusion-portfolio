@@ -1,60 +1,54 @@
-# 음원 방향 추정 · 센서 기반 수어 번역
+# 음원 방향과 수어를 함께 전달하는 장치
 
-**STM32 ADC/DMA · TDOA · 센서 특징 분류 · 3보드 통합**
+마이크로 주변 소리의 방향을 추정하고, 센서 장갑의 동작을 문자로 표시하는 시제품입니다. 세 대의 STM32에서 두 입력 경로와 출력 처리를 나누고 SPI로 결과와 모드 설정을 교환했습니다.
 
-주변 소리의 방향과 수어의 문자 정보를 함께 전달하는 시제품입니다. 세 대의 STM32에서 마이크 처리, 센서 장갑의 동작 분류, LED/LCD 출력을 나누고 SPI로 결과와 모드 설정을 교환했습니다.
+**STM32F103RB · C/HAL · ADC/DMA · TDOA · Flex/IMU · 정수 추론 · SPI · LCD**
 
-![프로젝트 시연 미리보기](assets/demo-preview.gif)
+## 전체 흐름
 
-[시연영상](media/demo.mp4) · [시연 구간 안내](docs/demo.md) · [시스템 구조](docs/architecture.md) · [개발 과정](docs/development.md) · [결과와 시험 조건](docs/results.md) · [코드 안내](docs/code-map.md) · [실행 준비](docs/reproduction.md)
+![세 STM32 보드의 음원 방향·수어 분류·표시 구조](assets/system-flow.svg)
 
-| 구분 | 내용 |
+A보드는 마이크, B보드는 Flex 센서와 MPU6050을 처리합니다. C보드는 결과를 읽어 방향 LED와 16×2 LCD를 갱신합니다. 수어 모델은 PC에서 학습하고, B보드에서는 정수 파라미터로 추론합니다.
+
+## 시연
+
+[전체 시연영상](media/demo.mp4) · [확인할 구간](docs/demo.md)
+
+음원 방향에 따른 LED와 손동작에 따른 LCD 출력을 확인할 수 있습니다. 수어 입력은 지정된 표현을 사용하는 간단어 모드와 주어→동사→목적어 모드로 구성했습니다.
+
+## 주요 구현
+
+**1. DMA 기반 마이크 데이터 취득**
+
+Timer trigger→ADC scan→DMA circular buffer로 데이터를 모읍니다. half/full callback은 처리할 구간을 알리고, CPU는 완료된 프레임의 에너지·교차상관을 계산합니다. 여러 ADC 채널은 순차 변환합니다.
+
+**2. 발화 구간을 누적하는 방향 판정**
+
+VAD로 유효한 소리를 고르고 좌우 마이크의 시간차를 계산합니다. 한 프레임의 결과에 의존하지 않도록 발화 동안 lag histogram과 에너지를 누적하고, 전후방 에너지와 소음 모드도 판정 조건에 사용합니다.
+
+**3. 센서 특징과 표시 상태의 연결**
+
+Flex·IMU의 2초 윈도우에서 185차원 특징을 생성합니다. 다중 클래스 로지스틱 회귀를 정수 점수 계산으로 배포하고, 모드·문장 단계에 맞는 후보를 골라 LCD에 표시합니다.
+
+## 결과와 확인 범위
+
+보고서에 방향 LED·수어 LCD 통합 시연과 DMA/비DMA의 GPIO 구간 계측이 기록되어 있습니다. **약 88%는 PC validation 160개의 수어 분류 결과**이며, STM32 배포 모델의 현장 정확도와 구분합니다. 비교 조건은 [결과 문서](docs/results.md)에 있습니다.
+
+A/B 펌웨어와 CubeMX 설정, 수집·학습 도구를 제공합니다. C보드는 보고서 부록에서 복원한 참조 코드이며, 독립 빌드에 필요한 프로젝트 설정은 완비되지 않았습니다. 출처와 데이터 준비 조건은 아래 문서에서 확인할 수 있습니다.
+
+## 문서와 코드
+
+| 살펴볼 내용 | 링크 |
 |---|---|
-| 과목 | 임베디드시스템설계 프로젝트2 · 2025학년도 2학기 |
-| 하드웨어 | STM32F103RB × 3, 마이크 × 3, Flex 센서 × 5, MPU6050, LED, 16×2 LCD |
-| A보드 | ADC scan·DMA, 프레임 에너지·VAD, 교차상관 기반 후방 음원 방향 추정 |
-| B보드 | Flex·IMU 취득, 2초 동작 특징, 정수 선형 분류 |
-| C보드 | A/B 결과 수신, 방향 LED, 간단어·S/V/O 문장 모드 LCD |
-
-## 센서에서 표시까지
-
-```text
-마이크 3개 → A보드 DMA·TDOA ── SPI ──┐
-                                     C보드 → 방향 LED / 수어 LCD
-Flex 5개 + MPU6050 → B보드 분류 ─ SPI ─┘
-                       ↑                 │
-                       └── 모드 설정 ────┘
-```
-
-## 구현의 핵심
-
-### 데이터 이동과 계산을 분리한 DMA
-
-Timer trigger와 ADC scan·DMA circular 모드로 마이크 데이터를 프레임 버퍼에 모으고, half/full callback으로 처리할 구간을 알립니다. CPU는 완료된 프레임의 에너지·교차상관 계산을 수행합니다. 폴링 방식과 타이머만 동작하는 대조 조건을 분리해 데이터 취득의 병목을 확인한 보고서가 있습니다.
-
-### 방향을 한 프레임에서 끝내지 않기
-
-VAD로 유효한 소리 구간을 고르고 좌우 마이크의 시간차를 계산합니다. 발화가 이어지는 동안 lag histogram과 에너지를 누적해 방향을 정하며, 전후방 에너지와 소음 모드도 판정 조건에 사용합니다.
-
-### 센서 장갑의 특징과 출력 모드를 연결
-
-Flex·IMU의 2초 윈도우에서 185차원 특징을 만들고 다중 클래스 로지스틱 회귀의 가중치를 정수 추론에 연결했습니다. 간단어 모드와 주어→동사→목적어 모드에서 후보 집합을 제한해 LCD에 표시합니다.
-
-## 기록된 결과
-
-보고서에는 방향 LED와 수어 LCD의 통합 시연, DMA/비DMA의 GPIO 구간 계측이 있습니다. 수어 분류의 **약 88%는 PC validation 160개에서 나온 값**이며 STM32에 배포된 모델의 별도 현장 정확도가 아닙니다. 처리 시간의 비교 조건은 [결과 문서](docs/results.md)에 있습니다.
-
-## 코드를 읽는 순서
-
-1. [A보드](firmware/board_a/Core/Src/main.c)에서 ADC/DMA 시작, callback, 프레임 처리와 방향 판정을 봅니다.
-2. [B보드](firmware/board_b/Core/Src/main.c)에서 Flex·IMU 취득, 특징 계산과 정수 분류를 봅니다.
-3. [실제 학습 코드](tools/train_gesture_all.py)에서 데이터 로드·표준화·`LogisticRegression.fit`을 확인합니다.
-4. [C보드 보고서 참조 코드](firmware/board_c/reference_main.c)에서 SPI 두 경로와 LED/LCD 표시 구조를 봅니다.
-
-## 코드와 개발 환경
-
-A/B 펌웨어와 CubeMX 설정, 센서 데이터 수집·실제 모델 학습 도구를 제공합니다. C의 SPI·LED·LCD 동작은 보고서 부록에서 복원한 참조 코드로 볼 수 있습니다. 파일별 출처와 설정·입력 형식은 [코드 안내](docs/code-map.md)와 [실행 준비](docs/reproduction.md)에 정리했습니다.
+| 보드 경계·모드·데이터 흐름 | [시스템 구조](docs/architecture.md) |
+| 설계 선택과 문제 해결 | [개발 과정](docs/development.md) |
+| 시험 조건·계측·재현 범위 | [결과](docs/results.md) · [실행 준비](docs/reproduction.md) |
+| 원본 파일·부록 복원·학습 입력 | [코드 안내](docs/code-map.md) |
+| DMA·교차상관·방향 판정 | [A보드 코드](firmware/board_a/Core/Src/main.c) |
+| 센서 취득·특징·정수 분류 | [B보드 코드](firmware/board_b/Core/Src/main.c) |
+| 두 SPI 경로·LED/LCD | [C보드 참조 코드](firmware/board_c/reference_main.c) |
+| 표준화·모델 학습 | [PC 학습 도구](tools/train_gesture_all.py) |
 
 ---
 
-[임베디드1: 음성 조명 제어](https://github.com/jounget5411-lab/embedded-voice-lighting-portfolio) · [임베디드3: 사진 판별·선별 저장](https://github.com/jounget5411-lab/embedded-intrusion-detection-portfolio)
+[대표 프로젝트 모아보기](https://github.com/jounget5411-lab/portfolio)

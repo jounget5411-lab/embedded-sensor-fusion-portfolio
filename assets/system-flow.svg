@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="360" viewBox="0 0 1080 360" role="img" aria-labelledby="title desc">
+  <title id="title">세 STM32 보드의 음원 방향 추정과 센서 수어 분류</title>
+  <desc id="desc">A보드는 세 마이크의 방향 정보를, B보드는 센서 장갑의 수어 분류 정보를 만듭니다. C보드는 두 SPI 경로로 결과를 읽고 모드를 전달하며 LED와 LCD를 제어합니다. 수어 학습은 PC, 추론은 B보드에서 수행합니다.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M0 0 L8 4 L0 8" fill="#277c9c"/></marker>
+    <style>text{font-family:'Segoe UI','Malgun Gothic',sans-serif;fill:#172b44}.heading{font-size:22px;font-weight:700}.node-title{font-size:19px;font-weight:700}.body{font-size:18px}.note{font-size:16px}.box{fill:#fff;stroke:#ccd8e4;stroke-width:1.5}.flow{fill:none;stroke:#277c9c;stroke-width:2;marker-end:url(#arrow)}.exchange{marker-start:url(#arrow)}</style>
+  </defs>
+  <rect width="1080" height="360" rx="16" fill="#f7f9fc"/>
+  <text class="heading" x="24" y="34">두 센서 경로 → 결과 통합 → LED / LCD</text>
+  <text class="note" x="24" y="61">세 보드는 모두 STM32F103RB를 사용합니다.</text>
+  <rect class="box" x="22" y="95" width="170" height="79" rx="12"/>
+  <text class="node-title" x="107" y="127" text-anchor="middle">마이크 × 3</text>
+  <text class="body" x="107" y="154" text-anchor="middle">주변 음원</text>
+  <rect class="box" x="225" y="84" width="315" height="102" rx="12"/>
+  <rect x="225" y="84" width="315" height="5" rx="2" fill="#277c9c"/>
+  <text class="node-title" x="243" y="114">A · 음원 방향 추정</text>
+  <text class="body" x="243" y="145">ADC scan / DMA · VAD</text>
+  <text class="body" x="243" y="173">교차상관 · 시간차 누적</text>
+  <rect class="box" x="22" y="245" width="170" height="82" rx="12"/>
+  <text class="node-title" x="107" y="278" text-anchor="middle">Flex × 5</text>
+  <text class="body" x="107" y="306" text-anchor="middle">MPU6050</text>
+  <rect class="box" x="225" y="235" width="315" height="96" rx="12"/>
+  <rect x="225" y="235" width="315" height="5" rx="2" fill="#24856e"/>
+  <text class="node-title" x="243" y="265">B · 수어 동작 분류</text>
+  <text class="body" x="243" y="294">2초 윈도우 · 185개 특징</text>
+  <text class="body" x="243" y="321">MCU에서 정수 추론</text>
+  <text class="note" x="242" y="213">PC 학습 → 정수 모델</text>
+  <path class="flow" d="M416 217V231"/>
+  <rect class="box" x="630" y="151" width="232" height="119" rx="12"/>
+  <text class="node-title" x="648" y="183">C · 결과와 모드 관리</text>
+  <text class="body" x="648" y="215">SPI1 / SPI2 master</text>
+  <text class="body" x="648" y="245">표시 상태 갱신</text>
+  <rect class="box" x="916" y="151" width="142" height="119" rx="12"/>
+  <text class="node-title" x="987" y="183" text-anchor="middle">LED / LCD</text>
+  <text class="body" x="987" y="215" text-anchor="middle">음원 방향</text>
+  <text class="body" x="987" y="245" text-anchor="middle">지정 수어</text>
+  <path class="flow" d="M192 135H221"/>
+  <path class="flow" d="M192 286H221"/>
+  <path class="flow exchange" d="M544 135H592V186H626"/>
+  <text class="note" x="558" y="121">SPI1</text>
+  <path class="flow exchange" d="M544 285H592V237H626"/>
+  <text class="note" x="557" y="306">SPI2</text>
+  <path class="flow" d="M862 210H912"/>
+  <text class="note" x="648" y="317">C → A/B: 소음·문장 모드 전달</text>
+</svg>
