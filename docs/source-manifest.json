@@ -1,0 +1,387 @@
+{
+  "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+  "files": [
+    {
+      "file": "firmware/board_a/Core/Inc/main.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/A_board_final_1/A_board_draft/Core/Inc/main.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "320a2ec0bf2019e6a9fea11698e87c89d2b58d5530673341c5252c0ffd8b1f07",
+      "bytes": 2471
+    },
+    {
+      "file": "firmware/board_a/Core/Inc/stm32f1xx_hal_conf.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/A_board_final_1/A_board_draft/Core/Inc/stm32f1xx_hal_conf.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "bb87e8334be25664248e4f662534730843db4e94a50b3cd1d1a306f8b7e700ae",
+      "bytes": 15698
+    },
+    {
+      "file": "firmware/board_a/Core/Inc/stm32f1xx_it.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/A_board_final_1/A_board_draft/Core/Inc/stm32f1xx_it.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "fde2e4dfcf929e4f1798642d5860ad6cfeb20affbaa1ff1ec506c9a301cb1fad",
+      "bytes": 1998
+    },
+    {
+      "file": "firmware/board_a/Core/Src/main.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/A_board_final_1/A_board_draft/Core/Src/main.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "ec6208fd87d311e6848a474b619d3c87375f01cf9073bf986e07c7f0d00e4524",
+      "bytes": 29512
+    },
+    {
+      "file": "firmware/board_a/Core/Src/stm32f1xx_hal_msp.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/A_board_final_1/A_board_draft/Core/Src/stm32f1xx_hal_msp.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "2ddada39f4b0d54b0bbe9c645042b64448e42b21b46bd6edeeb2576620a71d4f",
+      "bytes": 9386
+    },
+    {
+      "file": "firmware/board_a/Core/Src/stm32f1xx_it.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/A_board_final_1/A_board_draft/Core/Src/stm32f1xx_it.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "2cb6f97cf6c2bf5ea382142b3b99c28953bf88098c67d7b39676fce95958a457",
+      "bytes": 6104
+    },
+    {
+      "file": "firmware/board_a/Core/Src/syscalls.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/A_board_final_1/A_board_draft/Core/Src/syscalls.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "1589f3d61a3625fb2e4604c6ffd48518fda29d1b78bf774b2d91d76236e1777f",
+      "bytes": 2847
+    },
+    {
+      "file": "firmware/board_a/Core/Src/sysmem.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/A_board_final_1/A_board_draft/Core/Src/sysmem.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "ae7da85ddcf68727218002cace4d885d363c9e1cd1955ca1b10ccc5e3075b9b5",
+      "bytes": 2726
+    },
+    {
+      "file": "firmware/board_a/Core/Src/system_stm32f1xx.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/A_board_final_1/A_board_draft/Core/Src/system_stm32f1xx.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "6f13b57054f33b4dcb8f3f23fa05b2942d9dca8abd9a2a08ecde6f99693505a5",
+      "bytes": 14575
+    },
+    {
+      "file": "firmware/board_a/A_board_final_1.ioc",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/A_board_final_1/A_board_draft/A_board_final_1.ioc",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "6e03cb39d32bd7721fca7e189495304c2881b01432e8efd6b404ee60c7471771",
+      "bytes": 8580
+    },
+    {
+      "file": "firmware/board_b/Core/Inc/feature.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Inc/feature.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "fa45810befc76da61ce747997558b645a0c4f97da0ec3111d5d82b7711f8f051",
+      "bytes": 179
+    },
+    {
+      "file": "firmware/board_b/Core/Inc/flex_sensor.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Inc/flex_sensor.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "5255cd6e5a2fc246ebc010604dda94cced8d0ed3853ee81196e1fa9efffeafe8",
+      "bytes": 477
+    },
+    {
+      "file": "firmware/board_b/Core/Inc/main.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Inc/main.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "eb4a94ce8d4435f4ed44039be9ccc0fad6ab1f250e2bb09b87e5130754a9da48",
+      "bytes": 2269
+    },
+    {
+      "file": "firmware/board_b/Core/Inc/mpu6050.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Inc/mpu6050.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "580ac266104beee639d48378d7f54ad7e45b364371c8e14a1305245a10b18f5f",
+      "bytes": 350
+    },
+    {
+      "file": "firmware/board_b/Core/Inc/stm32f1xx_hal_conf.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Inc/stm32f1xx_hal_conf.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "93225e4f8ac8d2a1fdcf3ec263463d20b1b0e55fbe2fcd0b568af2720c2eb53a",
+      "bytes": 15698
+    },
+    {
+      "file": "firmware/board_b/Core/Inc/stm32f1xx_it.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Inc/stm32f1xx_it.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "fde2e4dfcf929e4f1798642d5860ad6cfeb20affbaa1ff1ec506c9a301cb1fad",
+      "bytes": 1998
+    },
+    {
+      "file": "firmware/board_b/Core/Inc/weights_gesture.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Inc/weights_gesture.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "0a41fc540edf273023c5d35cfdd8fa47c197c92cd3a0443daff724bbc88fbc14",
+      "bytes": 21611
+    },
+    {
+      "file": "firmware/board_b/Core/Src/feature.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Src/feature.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "19ae6cf452fae0ab57b96f6ec307b73b77d7250831e867d028515fb8f7d16043",
+      "bytes": 602
+    },
+    {
+      "file": "firmware/board_b/Core/Src/flex_sensor.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Src/flex_sensor.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "12a71cb8008048eb5bcd4f257ee403102677077448557a345e029be620ac2c76",
+      "bytes": 561
+    },
+    {
+      "file": "firmware/board_b/Core/Src/main.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Src/main.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "e33dece41eeebba8d0beb3952172ed431be6ef4f6a547ee427223384a040ba62",
+      "bytes": 30017
+    },
+    {
+      "file": "firmware/board_b/Core/Src/mpu6050.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Src/mpu6050.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "3b56abaa253eff19492d051bda72c53782c8ec220e91b1ca45fea656bdc77ca8",
+      "bytes": 1240
+    },
+    {
+      "file": "firmware/board_b/Core/Src/stm32f1xx_hal_msp.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Src/stm32f1xx_hal_msp.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "24d0a5f89aeeecfacf82d1217edb23629ec3f0c85a7c0cf19f9694c97b20724f",
+      "bytes": 8185
+    },
+    {
+      "file": "firmware/board_b/Core/Src/stm32f1xx_it.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Src/stm32f1xx_it.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "2cb6f97cf6c2bf5ea382142b3b99c28953bf88098c67d7b39676fce95958a457",
+      "bytes": 6104
+    },
+    {
+      "file": "firmware/board_b/Core/Src/syscalls.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Src/syscalls.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "1589f3d61a3625fb2e4604c6ffd48518fda29d1b78bf774b2d91d76236e1777f",
+      "bytes": 2847
+    },
+    {
+      "file": "firmware/board_b/Core/Src/sysmem.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Src/sysmem.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "ae7da85ddcf68727218002cace4d885d363c9e1cd1955ca1b10ccc5e3075b9b5",
+      "bytes": 2726
+    },
+    {
+      "file": "firmware/board_b/Core/Src/system_stm32f1xx.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/Core/Src/system_stm32f1xx.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "6f13b57054f33b4dcb8f3f23fa05b2942d9dca8abd9a2a08ecde6f99693505a5",
+      "bytes": 14575
+    },
+    {
+      "file": "firmware/board_b/board_b.ioc",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b/board_b.ioc",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "5dba671a92daec20e96c747e2beee9e34ac28477a008eb989902464a99358bf1",
+      "bytes": 8064
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Inc/feature.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Inc/feature.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "fa45810befc76da61ce747997558b645a0c4f97da0ec3111d5d82b7711f8f051",
+      "bytes": 179
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Inc/flex_sensor.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Inc/flex_sensor.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "5255cd6e5a2fc246ebc010604dda94cced8d0ed3853ee81196e1fa9efffeafe8",
+      "bytes": 477
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Inc/main.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Inc/main.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "eb4a94ce8d4435f4ed44039be9ccc0fad6ab1f250e2bb09b87e5130754a9da48",
+      "bytes": 2269
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Inc/mpu6050.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Inc/mpu6050.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "580ac266104beee639d48378d7f54ad7e45b364371c8e14a1305245a10b18f5f",
+      "bytes": 350
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Inc/stm32f1xx_hal_conf.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Inc/stm32f1xx_hal_conf.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "300eb1413fd85c6fb6c1faec186ba67eea150d54a35f34a337113621221e31a5",
+      "bytes": 15705
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Inc/stm32f1xx_it.h",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Inc/stm32f1xx_it.h",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "fde2e4dfcf929e4f1798642d5860ad6cfeb20affbaa1ff1ec506c9a301cb1fad",
+      "bytes": 1998
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Src/feature.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Src/feature.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "19ae6cf452fae0ab57b96f6ec307b73b77d7250831e867d028515fb8f7d16043",
+      "bytes": 602
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Src/flex_sensor.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Src/flex_sensor.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "12a71cb8008048eb5bcd4f257ee403102677077448557a345e029be620ac2c76",
+      "bytes": 561
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Src/main.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Src/main.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "bf0be5edb9f042dcc4d670bc8dd577ba418b578a084706719572d33808695e4d",
+      "bytes": 20579
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Src/mpu6050.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Src/mpu6050.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "3b56abaa253eff19492d051bda72c53782c8ec220e91b1ca45fea656bdc77ca8",
+      "bytes": 1240
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Src/stm32f1xx_hal_msp.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Src/stm32f1xx_hal_msp.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "24d0a5f89aeeecfacf82d1217edb23629ec3f0c85a7c0cf19f9694c97b20724f",
+      "bytes": 8185
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Src/stm32f1xx_it.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Src/stm32f1xx_it.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "2cb6f97cf6c2bf5ea382142b3b99c28953bf88098c67d7b39676fce95958a457",
+      "bytes": 6104
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Src/syscalls.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Src/syscalls.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "1589f3d61a3625fb2e4604c6ffd48518fda29d1b78bf774b2d91d76236e1777f",
+      "bytes": 2847
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Src/sysmem.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Src/sysmem.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "ae7da85ddcf68727218002cace4d885d363c9e1cd1955ca1b10ccc5e3075b9b5",
+      "bytes": 2726
+    },
+    {
+      "file": "firmware/board_b_collection/Core/Src/system_stm32f1xx.c",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/Core/Src/system_stm32f1xx.c",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "6f13b57054f33b4dcb8f3f23fa05b2942d9dca8abd9a2a08ecde6f99693505a5",
+      "bytes": 14575
+    },
+    {
+      "file": "firmware/board_b_collection/board_b.ioc",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/board_b_csv/board_b.ioc",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "5dba671a92daec20e96c747e2beee9e34ac28477a008eb989902464a99358bf1",
+      "bytes": 8064
+    },
+    {
+      "file": "tools/collect_data.py",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/csv/제출용/collect_data.py",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "03424417dd91f15dbcb1e4aaf9c7860ab0cfcf1bc1acceaa93f3a7b061945415",
+      "bytes": 3431
+    },
+    {
+      "file": "tools/train_gesture_all.py",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/csv/제출용/train_gesture_all.py",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "unchanged-source",
+      "sha256": "ff28709ebea343240c385b367f0ecc6daf81ef7e4982d1bff9befbe0284a66de",
+      "bytes": 2249
+    },
+    {
+      "file": "data/example_sensor_window.csv",
+      "source": "archive/Desktop/대학교오오/3학뇬/2학기/임시설/csv/bboard_csv/COME_003.csv",
+      "source_commit": "c8618b1caef9cdf128ed20f62692d63818d9dd61",
+      "kind": "recorded-csv-example-only",
+      "sha256": "bf5804a6dd6f86da32579781ae63de3fd513371883331a65190196111cd5101a",
+      "bytes": 10966
+    },
+    {
+      "file": "firmware/board_c/reference_main.c",
+      "source": "임시설플젝2.pdf, physical pages 74-92",
+      "kind": "report-reference-restoration",
+      "source_pdf_sha256": "f308c50f25c40ba1afbfdcd54a1f0ad69bee3b23a40b0fb55c611c0946e433dd",
+      "sha256": "98bbe5e8faf47a4ab41d434a43c0b76b9e3b922e808fc2827d36da6bef41ac8d",
+      "bytes": 27140,
+      "changes": [
+        "Remove PDF page markers",
+        "Trim trailing whitespace",
+        "Restore missing first comment opener",
+        "Close truncated assert_failed body and USE_FULL_ASSERT directive; no new firmware logic"
+      ]
+    }
+  ]
+}
